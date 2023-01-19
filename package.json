@@ -1,0 +1,19 @@
+{
+  "name": "wrtc-mpd-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^4.11.0",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "xml-formatter": "^3.2.0",
+    "xml2json": "^0.12.0"
+  }
+}
