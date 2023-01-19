@@ -39,7 +39,7 @@ export function addWHEPAdaptionSet(manifest: string): string {
       '@_contentType': 'video',
       '@_mimeType': 'video RTP/AVP',
       '@_codecs': 'avc1.4D401F',
-      '@_initializationPrincipal': 'whep://localhost:3000/whep/channel/dash'
+      '@_initializationPrincipal': 'http://localhost:8300/whep/channel/dash'
     }
   });
 

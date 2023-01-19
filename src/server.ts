@@ -44,7 +44,7 @@ server.get('/*', async (request, reply) => {
 });
 
 server.listen(
-  { port: process.env.PORT ? Number(process.env.PORT) : 3000 },
+  { port: process.env.PORT ? Number(process.env.PORT) : 5000 },
   (err, address) => {
     if (err) {
       throw err;
