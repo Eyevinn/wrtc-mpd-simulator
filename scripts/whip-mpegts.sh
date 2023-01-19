@@ -1,1 +1,1 @@
-whip-mpegts -a 127.0.0.1 -p 1234 -u "http://localhost:8200/api/v2/whip/sfu-broadcaster?channelId=dash"
+whip-mpegts -a srt://127.0.0.1 -p 1234 -u "http://localhost:8200/api/v2/whip/sfu-broadcaster?channelId=dash"
