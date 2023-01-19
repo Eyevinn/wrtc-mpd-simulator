@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "nodemon"
+    "dev": "nodemon",
+    "start": "ts-node src/server.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@fastify/cors": "^8.2.0",
+    "chalk": "^4.1.2",
     "fast-xml-parser": "^4.0.13",
     "fastify": "^4.11.0",
     "nodemon": "^2.0.20",
@@ -17,6 +19,7 @@
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
+    "@types/node": "^18.11.18",
     "prettier": "^2.8.3"
   }
 }

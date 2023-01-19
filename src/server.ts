@@ -3,25 +3,25 @@ import cors from '@fastify/cors';
 import fs from 'fs/promises';
 import fsSync from 'fs';
 import path from 'path';
-import { spawn } from 'child_process';
 import { addWHEPAdaptionSet } from './dash';
+import chalk from 'chalk';
+import * as encoder from "./encoder";
+
+function log(...args: any) {
+  console.log(chalk.green(`[Server]`, ...args));
+}
 
 const tmpFolder = path.join(__dirname, '../tmp/');
 
 fsSync.rmdirSync(tmpFolder, { recursive: true });
 fsSync.mkdirSync(tmpFolder, { recursive: true });
 
-const startScript = spawn(
-  'bash',
-  [path.join(__dirname, '../scripts/start.sh')],
-  { cwd: path.join(__dirname, '../scripts') }
-);
-startScript.stderr.on('data', (msg) => {
-  console.error(`${msg}`);
-});
-startScript.stdout.on('data', (msg) => {
-  console.log(`${msg}`);
-});
+const input = process.argv[2];
+if (!input) {
+  console.error(chalk.red("No input provided"));
+  process.exit(1);
+}
+encoder.start(input[0] === "/" ? input : path.join(__dirname, input));
 
 const server = fastify();
 server.register(cors);
@@ -49,6 +49,6 @@ server.listen(
     if (err) {
       throw err;
     }
-    console.log(`WebRTC/DASH Manifest available at ${address}/live.mpd`);
+    log(`WebRTC/DASH Manifest available at ${address}/live.mpd`);
   }
 );

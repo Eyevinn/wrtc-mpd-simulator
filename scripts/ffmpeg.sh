@@ -1,4 +1,5 @@
-ffmpeg -re -stream_loop -1 -i TearsOfSteel.mp4 \
+echo $1
+ffmpeg -re -stream_loop -1 -i $1 \
     -filter_complex "drawbox=x=0:y=0:width=260:height=42:color=black@0.8:t=fill,\
     settb=AVTB,setpts='trunc(PTS/1K)*1K+st(1,trunc(RTCTIME/1K))-1K*trunc(ld(1)/1K)',\
     drawtext=text='%{localtime\:%H\\\\\:%M\\\\\:%S}.%{eif\:1M*t-1K*trunc(t*1K)\:d}':x=5:y=5:\
