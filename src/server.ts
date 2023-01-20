@@ -39,6 +39,9 @@ server.get('/*', async (request, reply) => {
   if (request.url.includes("..")) {
     return reply.status(400).send();
   }
+  if (request.url === "/") {
+    return reply.send("OK");
+  }
   const stream = fsSync.createReadStream(path.join(tmpFolder, request.url));
   return reply.header('content-type', 'application/octet-stream').send(stream);
 });
