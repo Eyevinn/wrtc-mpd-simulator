@@ -1,6 +1,6 @@
 # MPD + WebRTC Live Simulator 
 
-A node.js application that simulates a live mpeg-dash stream with both normal segments as well as WebRTC based on the dash-if [report](https://dashif.org/webRTC/report.html#596-webrtc-adaptation-set).
+A node.js application that simulates a live mpeg-dash stream a normal AdaptionSet as well as an WebRTC WHEP AdaptionSet. The resulting manifest is based on the example in the dash-if [report](https://dashif.org/webRTC/report.html#596-webrtc-adaptation-set).
 
 ## Requirements
 - [ffmpeg](https://ffmpeg.org/)
